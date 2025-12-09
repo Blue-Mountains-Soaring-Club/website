@@ -11,8 +11,12 @@ menu:
 featured_image: "/img/nofly-rain.jpg"
 ---
 
-Please send us a message to make contact. There is too much phone spam generated from putting phone numbers here unfortunately. A club member will contact you as soon as possible, especially if you send us your phone number in the email.
+<div style="text-align:center;">
 
-Add option to message fb page.
+For information regarding flying at any of our sites, please join our first-contact <a href="https://chat.whatsapp.com/HYlQLgEIYByCSunax4LXc5">WhatsApp group</a></br>
 
-{{< gform src="1FAIpQLSfNWmYt-l3In3hkz2hFy5gjkm9DGrpG5wU4yAe1wZJfwspRLw" width="800" height="900">}}
+<img src="/img/contact-us-qr.png" width="300"></br>
+
+For other inquiries, please email flybluemountains@gmail.com
+
+</div>
