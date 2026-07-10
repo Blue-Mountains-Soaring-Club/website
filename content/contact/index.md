@@ -15,7 +15,7 @@ featured_image: "/img/nofly-rain.jpg"
 
 For information regarding flying at any of our sites, please join our first-contact <a href="https://chat.whatsapp.com/HYlQLgEIYByCSunax4LXc5">WhatsApp group</a></br>
 
-<img src="/img/contact-us-qr.png" width="300"></br>
+![Contact Us QR code](/img/contact-us-qr.png)
 
 For other inquiries, please email flybluemountains@gmail.com
 

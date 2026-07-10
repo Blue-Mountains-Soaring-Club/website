@@ -1,10 +1,19 @@
 baseURL = 'https://bluemountainssoaring.club'
 languageCode = 'en-us'
 title = 'Blue Mountains Soaring Club'
-theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+
 [params]
   site_logo = "img/bmsc-logo.svg"
+
+[params.ananke]
   custom_css = ["breadcrumb.css"]
 
 [markup.goldmark.renderer]
 unsafe= true
+
+[module]
+[[module.imports]]
+disable = false
+ignoreConfig = false
+ignoreImports = false
+path = 'github.com/gohugo-ananke/ananke/v2'

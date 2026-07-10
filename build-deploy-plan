@@ -1,0 +1,5 @@
+Build using github actions
+
+Deploy main only to github pages
+
+Use Route 53 as the domain provider
