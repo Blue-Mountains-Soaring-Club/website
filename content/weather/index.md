@@ -19,9 +19,9 @@ Current conditions and forecasts for Mount Blackheath
 
 <iframe class="weatherItem" height="700px" src="https://embed.windy.com/embed2.html?lat=-33.705&lon=150.250&detailLat=-33.654&detailLon=150.250&&width=1200&height=550&zoom=9&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1" frameborder="0"></iframe>
 
-<img class="weatherItem raspItem" src="http://ausrasp.nfshost.com/NSWSOUTH/OUT+0/FCST/meteogram_Blackheath.png">
-<img class="weatherItem raspItem" src="http://ausrasp.nfshost.com/NSWSOUTH/OUT+1/FCST/meteogram_Blackheath.png">
-<img class="weatherItem raspItem" src="http://ausrasp.nfshost.com/NSWSOUTH/OUT+2/FCST/meteogram_Blackheath.png">
+<img class="weatherItem raspItem" src="https://ausrasp.nfshost.com/NSWSOUTH/OUT+0/FCST/meteogram_Blackheath.webp">
+<img class="weatherItem raspItem" src="https://ausrasp.nfshost.com/NSWSOUTH/OUT+1/FCST/meteogram_Blackheath.webp">
+<img class="weatherItem raspItem" src="https://ausrasp.nfshost.com/NSWSOUTH/OUT+2/FCST/meteogram_Blackheath.webp">
 
 <iframe id="mtblackheathwind" class="weatherItem" scrolling="no" src="https://nickroach.github.io/sea_breeze_tracker/" frameborder="0"></iframe>
 
