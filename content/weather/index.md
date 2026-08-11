@@ -27,9 +27,6 @@ Current conditions and forecasts for Mount Blackheath
 
 <iframe class="weatherItem" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=72384" height="550px" frameborder="0"  scrolling="no"></iframe>
 
-<img class="weatherItem" src="https://my.meteoblue.com/images/meteogram?temperature_units=C&windspeed_units=kmh&precipitation_units=mm&darkmode=false&iso2=au&lat=-33.6153&lon=150.267&asl=1093&tz=Australia%2FSydney&dpi=72&apikey=jhMJTOUVRNvs25m4&lang=en&location_name=Mount+Boyce&sig=d8431e283d55ee80885e75ab07dd1120">
-
-<img class="weatherItem" src=https://borah.flymanilla.com/weather/synimage/synoptic.png>
 <div>
 
 <style>
