@@ -25,7 +25,7 @@ Current conditions and forecasts for Mount Blackheath
 
 <iframe id="mtblackheathwind" class="weatherItem" scrolling="no" src="https://nickroach.github.io/sea_breeze_tracker/" frameborder="0"></iframe>
 
-<iframe class="weatherItem" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=72384" height="550px" frameborder="0"  scrolling="no"></iframe>
+<iframe width="100%" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=72384" height="550px" frameborder="0"  scrolling="no"></iframe>
 
 <div>
 
