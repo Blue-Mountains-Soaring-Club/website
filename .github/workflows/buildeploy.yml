@@ -20,13 +20,12 @@ defaults:
     shell: bash
 
 jobs:
-  deploy-prod:
-    if: github.ref == 'refs/heads/main'
+  deploy:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
 
     environment:
-      name: prod
-      url: https://bluemountainssoaring.club
+      name: ${{ github.ref == 'refs/heads/main' && 'prod' || 'test' }}
 
     env:
       HUGO_VERSION: 0.160.0
@@ -57,7 +56,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "https://bluemountainssoaring.club/"
+            --baseURL "${{ vars.BASE_URL }}"
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6.2.3
@@ -67,54 +66,10 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync public/ "s3://${{ vars.PRODUCTION_BUCKET }}/" --delete
+          aws s3 sync public/ "s3://${{ vars.DEPLOY_BUCKET }}/" --delete
 
-
-  deploy-test:
-    if: github.ref == 'refs/heads/develop'
-    runs-on: ubuntu-latest
-
-    environment:
-      name: test
-      url: ${{ vars.TEST_BASE_URL }}
-
-    env:
-      HUGO_VERSION: 0.160.0
-      AWS_REGION: ap-southeast-2
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Install Hugo CLI
+      - name: Invalidate CloudFront cache
         run: |
-          wget -O ${{ runner.temp }}/hugo.deb \
-            https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb
-          sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
-      - name: Install Dart Sass
-        run: sudo snap install dart-sass
-
-      - name: Install Node.js dependencies
-        run: '[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true'
-
-      - name: Build with Hugo
-        env:
-          HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
-        run: |
-          hugo \
-            --minify \
-            --baseURL "${{ vars.TEST_BASE_URL }}/"
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v6.2.3
-        with:
-          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
-
-      - name: Deploy to S3
-        run: |
-          aws s3 sync public/ "s3://${{ vars.TEST_BUCKET }}/" --delete
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
